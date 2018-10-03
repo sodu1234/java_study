@@ -1,140 +1,222 @@
 package com.company;
-import java.util.Scanner;
-
-public class Main {
-
-    public static void main(String[] args) {
-        // write your code here
-//                System.out.println("백준알고리즘 1번문제");
-//                System.out.println("####################");
-//                                                        //A행
-//                for (int a = 0; a < 5; ++a) {           //0행 별1개 개행
-//                    for (int b = 0; b < a+1; b++) {     //1행 별2개 개행
-//                        System.out.print("*");          //2행 별3개 개행
-//                    }                                   //3행 별4개 개행
-//                    System.out.println();               //4행 별5개 개행
-//                }
+////별찍기1번
+//import java.util.Scanner;
 //
-//                System.out.println("백준알고리즘 2번문제");
-//                System.out.println("####################");
+//public class Main {
 //
-//                int z = 5;                              //A행
-//                for (int a = 0; a < z; a++) {           //0행 공백 공공공공별 개행
-//                    for (int b = 0; b <z -a-1; b++) {   //1행 공백 공공공별별 개행
-//                        System.out.print(" ");          //2행 공백 공공별별별 개행
-//                    }                                   //3행 공백 공별별별별 개행
-//                    for (int b = 0; b<=a ; b++) {       //4행 공백 공별별별별 개행
-//                        System.out.print("*");
-//                    }
-//                    System.out.println();
-//                }
+//    public static void main(String[] args) {
 //
-//                System.out.println("백준알고리즘 3번문제");
-//                System.out.println("####################");
-//                                                       //A행
-//                for (int a = 0; a < 5; ++a) {          //0행 별별별별별 개행
-//                    for (int b = 0; b <5-a ; b++) {    //1행 별별별별공 개행
-//                        System.out.print("*");         //2행 별별별공공 개행
-//                    }                                  //3행 별별공공공 개행
-//                    System.out.println();              //4행 별공공공공 개행
-//                }
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
 //
-//                System.out.println("백준알고리즘 4번문제");
-//                System.out.println("####################");
-//                                                             //A행
-//                int k = 5;                                   //1행 for문 첫번쨰안돔 별별별별별 개행
-//                for (int a = 1; a <= k; ++a) {               //2행 공별별별별 개행
-//                    for (int b = 1; b <= a - 1; ++b) {       //3행 공공별별별 개행
-//                        System.out.print(" ");               //4행 공공공별별 개행
-//                    }                                        //5행 공공공공별 개행
-//                    for (int b = 1; b <= k - a + 1; ++b) {
-//                        System.out.print("*");
-//                    }
-//                    System.out.println();
-//                }
+//        for (int i = 0; i < n; ++i ){
+//            for (int j = 0; j < i+1 ; ++j ) {
+//                System.out.print("*");
+//            }
 //
-//                System.out.println("백준알고리즘 5번문제");
-//                System.out.println("####################");
 //
-//                for (int a = 0; a < 5; a++) {                          //  A행
-//                    for (int b = 4; b > a; b--) {                       //  0행 b가4 = 4,3,2,1 공공공공별
-//                        System.out.print(" ");                          //  1행 b가4 = 4,3,2   공공공별별별
-//                    }                                                   //  2행 b가4 = 4,3,    공공별별별별별
-//                                                                        //  3행 b가4 = 4       공별별별별별별별
-//                    for (int c = 1; c <= a*2+1; c++) {                  //그냥 찍으면 직각삼각형
-//                        System.out.print("*");
-//                    }
-//                    System.out.println();
-//                }
-//
-//        System.out.println("백준알고리즘 6번문제");
-//        System.out.println("####################");
-//
-//        for (int a = 0; a < 5; a++) {                             //A행 0행부터 4행까찌 5개행
-//            for (int b = 0; b < (9 - a); b++) {                  //0행 0<0 1<0 2<0 3<0 4<0 5<0 6<0 7<0 8<0 개행
-//                System.out.print((b < a) ? " " : "*");           //    별  별  별  별  별  별  별  별  별
-//            }   //삼항연산자 b<a이면 공백 : 아니면 별찍어라      //   1행 0<1 1<1 2<1 3<1 4<1 5<1 6<1 7<1
-//            //(조건식)?  ture일 경우  : false일경우              //    공  별  별  별  별  별  별  별  개행
-//                                                                 //2행 0<2 1<2 2<2 3<2 4<2 5<2 6<2
-//            System.out.println();                                //    공  공  별  별  별  별  별  개행
-//        }                                                        //3행 0<3 1<3 2<3 3<3 4<3 5<3
-//                                                                 //    공  공  공  별  별  별  개행
-//                                                                 //4행 0<4 1<4 2<4 3<4 4<4
-//                                                                 //    공  공  공  공  별 개행
-//
-          System.out.println("백준알고리즘 7번문제");
-          System.out.println("####################"); //5번과 6번을 붙이면 해결됨
-                                                      //그렇게 하라고 낸 문제가 아닌듯한데;;;;;
-          for (int a = 0, b = 0; a < 9; a++) {                     //A행 총9행까지 0부터8
-            for (int c = 0; c < b + 5; c++) {                      //0행
-                System.out.print((c < (4 - b)) ? " " : "*");       //0<5
-            }                  // C <4-b 이면 공백 아니면 별       //0<4 1<4 2<4 3<4 4<4
-            if (a < 4) {                                           // 공 공 공 공 별 개행
-                b++;                                               //a=0 <4 -> b=1  c=0 a=1 0<6 포문 0,1,2,3,4,5
-            } else {                                               //0<3 1<3  2<3 3<3 4<3 4<4 5<5
-                b--;                                               // 공 공 공 별 별 별 개행
-            }                                                      //a=1 <4 -> b=2 c=0 a=2  0<7 포문 0,1,2,3,4,5.6
-            System.out.println();                                  //0<2 1<2 2<2 3<2 4<2 5<2 6<2
-        }                                                          // 공 공 별 별 별 별 개행
-                                                                   //a=2 <4 -> b=3. c=0 0<8 포문 0,1,2,3,4,5,6,7
-                                                                   //0<1 1<1 2<1 3<1 4<1 5<1 6<1 7<1
-                                                                   //공 별 별 별 별 별 별 별 개행
-                                                                   //a=3 <4 -> b=4. c=0 0<9 포문 0,1,2,3,4,5,6,7,8
-                                                                   //0<0 1<0 2<0 3<0 4<0 5<0 6<0 7<0 8<0
-                                                                   //별 별 별 별 별 별 별 별 별 개행
-                                                                   //a=4 b=3. c=0 0<8 포문 0,1,2,3,4,5,6,7
-                                                                   //0<1 1<1 2<1 3<1 4<1 5<1 6<1 7<11
-                                                                   //공 별 별 별 별 별 별 별 개행
-                                                                   //a=5<4 b=2 c=0 0<7 포문 0,1,2,3,4,5,6
-                                                                   //0<2 1<2 2<2 3<2 4<2 5<2 6<2
-                                                                   //공 공 별 별 별 별 별 개행
-                                                                   //a=6<4 b=1 c=0 0<6 포문 0,1,2,3,4,5
-                                                                   //0<3 1<3 2<3 3<3 4<3 5<3
-                                                                   //공 공 공 별 별 별 개행
+//            System.out.println();
+//        }
+//    }
+//}
 
 
-//                for (int a = 0; a < 5; a++) {                           //  A행
-//                    for (int b = 4; b > a; b--) {                       //  0행 b가4 = 4,3,2,1 공공공공별
-//                        System.out.print(" ");                          //  1행 b가4 = 4,3,2   공공공별별별
-//                    }                                                   //  2행 b가4 = 4,3,    공공별별별별별
-//                                                                        //  3행 b가4 = 4       공별별별별별별별
-//                    for (int c = 1; c <= a*2+1; c++) {                  //그냥 찍으면 직각삼각형
-//                        System.out.print("*");
-//                    }
-//                    System.out.println();
-//                }
+//별찍기2번
+//import java.util.Scanner;
 //
-//              for (int a = 0; a < 5; a++) {                             //A행 0행부터 4행까찌 5개행
-//                for (int b = 0; b < (9 - a); b++) {                  //0행 0<0 1<0 2<0 3<0 4<0 5<0 6<0 7<0 8<0 개행
-//                System.out.print((b < a) ? " " : "*");               //    별  별  별  별  별  별  별  별  별
-//              }   //삼항연산자 b<a이면 공백 : 아니면 별찍어라        //   1행 0<1 1<1 2<1 3<1 4<1 5<1 6<1 7<1
-//                  //(조건식)?  ture일 경우  : false일경우            //    공  별  별  별  별  별  별  별  개행
-//                                                                     //2행 0<2 1<2 2<2 3<2 4<2 5<2 6<2
-//            System.out.println();                                    //    공  공  별  별  별  별  별  개행
-//        }                                                            //3행 0<3 1<3 2<3 3<3 4<3 5<3
-//                                                                    //    공  공  공  별  별  별  개행
-//                                                                    //4행 0<4 1<4 2<4 3<4 4<4
-//                                                                    //    공  공  공  공  별 개행
+//public class Main {
+//
+//    public static void main(String[] args) {
+//
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        for (int i = 0; i < n; ++i ){
+//            for (int j = 0; j < n - i-1 ; ++j ) {
+//                System.out.print(" ");
+//            }
+//            for (int k = 0; k < i+1 ; ++k ) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+//    }
+//}
+//
+//
+//
+//별찍기3번
+//import java.util.Scanner;
+//
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        for (int i = 0; i < n; ++i ){
+//            for (int j = 0; j < n - i ; ++j ) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+//    }
+//}
 
-    }
-}
+
+// 별찍기4번
+//import java.util.Scanner;
+//
+//public class Main {
+//
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        for (int i = 0; i < n; ++i ){
+//            for (int j = 0; j < i ; ++j) {
+//                System.out.print(" ");
+//            }
+//            for (int k = 0; k < n-i ; ++k) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+//    }
+//}
+
+//별찍기5번
+//import java.util.Scanner;
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        for (int i = 0; i< n ; ++i ){
+//            for (int j = 0; j < n - i-1 ; ++j ) {
+//                System.out.print(" ");
+//            }
+//            for (int k = 0; k < (2*i)+1 ; ++k ) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+//    }
+//}
+//별찍기6번
+//import java.util.Scanner;
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        for (int i = 0; i< n ; ++i ){
+//            for (int j = 0; j < i ; ++j ) {
+//                System.out.print(" ");
+//            }
+//            for (int k = 0; k < (2*n)-(2*i+1) ; ++k ) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+//    }
+//}
+
+//별찍기7번
+//import java.util.Scanner;
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        for (int i = 0; i< n ; ++i ) {
+//            for (int j = 0; j < n-i-1; ++j) {
+//                System.out.print(" ");
+//            }
+//            for (int k = 0; k <(2*i)+1; ++k) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//
+//        }
+//        for (int i = 1; i< n ; ++i ) {
+//            for (int j = 0; j < i; ++j) {
+//                System.out.print(" ");
+//            }
+//            for (int k = 0; k < (2*n)-(2*i+1); ++k) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//
+//        }
+//    }
+//}
+
+//별찍기8번
+//import java.util.Scanner;
+//public class Main {
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        for (int i = 0; i< n ; ++i ) {
+//            for (int j = 0; j < i + 1; ++j) {
+//                System.out.print("*");
+//            }
+//            for (int k = 0; k < (2 * n) - 2 * (i + 1); ++k) {
+//                System.out.print(" ");
+//            }
+//            for (int z = 0; z < i + 1; ++z) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//        }
+//        for (int i = 1; i< n ; ++i ) {
+//            for (int j = 0; j < n-i ; ++j) {
+//                System.out.print("*");
+//            }
+//            for (int k = 0; k <(2*i); ++k) {
+//                System.out.print(" ");
+//            }
+//            for (int z = 0; z < n-i ; ++z) {
+//                System.out.print("*");
+//            }
+//            System.out.println();
+//
+//        }
+//
+//    }
+//}
+
+// 별찍기9번
+//import java.util.Scanner;
+//
+//public class Main {
+//
+//    public static void main(String[] args) {
+//
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        for (int i = 0; i< n ; ++i ) {
+//            for (int j = 0; j < i; ++j) {
+//                System.out.print(" ");
+//            }
+//            for (int k = 0; k < (2 * n) - (2*i)-1; ++k) {
+//                System.out.print("*");
+//            }
+//
+//            System.out.println();
+//        }
+//
+//        for (int i = 1; i < n ; ++i ) {
+//            for (int j = 0; j < n-i-1; ++j) {
+//                System.out.print(" ");
+//            }
+//            for (int k = 0; k <(2*i)+1; ++k) {
+//                System.out.print("*");
+//            }
+//
+//            System.out.println();
+//        }
+//    }
+//}
+
