@@ -408,3 +408,60 @@ public class Main {
 //        }
 //    }
 //}
+
+
+
+//자가진단1
+//import java.util.Scanner;
+//
+//class Printclass {
+//    void print(int n) {
+//        for (int i = 0; i < n; i++) {
+//            System.out.print("recursive");
+//            System.out.println();
+//        }
+//    }
+//}
+//
+//
+//public class Main {
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        new Printclass().print(n);
+//    }
+//
+//}
+//
+//
+
+
+//자가진단2
+//import java.util.Scanner;
+//
+//class Printclass {
+//    void print(int n) {
+//        for (int i = n; i > 0; i--) {
+//            System.out.print(i);
+//            System.out.print(" ");
+//
+//        }
+//        System.out.println();
+//    }
+//}
+//
+//
+//public class Main {
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//
+//        new Printclass().print(n);
+//    }
+//
+//}
+
+
+//자가진단3
+//
