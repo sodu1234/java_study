@@ -1,29 +1,50 @@
 package com.company;
-
-//별찍기15번
 import java.util.Scanner;
 
+//형성평가3
 public class Main {
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+        int m = sc.nextInt();
+        dice(n, m);
 
-        for(int i=1; i <= n ; i++){
-            for(int j=n-i; j > 0; j--){
-                System.out.print(" ");
-             }
-            for(int j=0; j< i*2-1; j++){
-                if(j==0 || j==i*2-2) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(" ");
+    }
+    static int a = 0;
+    static int[] sum = new int [10];
+    // String[] weeks = new String[7];      #배열선언
+
+
+    static void dice(int N, int M)
+    {
+        int i=0;
+        for (i = 1; i <= 6; ++i)
+        {
+            sum[a] = i;
+            if (a == N - 1)
+            {
+                int total = 0;
+                for (int j = 0; j <= a; ++j)
+                    total += sum[j];
+
+                if (total == M)
+                {
+                    for (int k = 0; k < N; ++k)
+                        System.out.print(sum[k]);
+                        System.out.print("\r\n");
+                    return;
                 }
             }
-            System.out.println();
+            else
+            {
+                a++;
+                dice(N, M);
+                a--;
+            }
         }
     }
+
 }
 
 //import java.util.Scanner;
@@ -451,7 +472,7 @@ public class Main {
 //}
 
 
-//별찍기 20번_old
+//별찍기 20번
 //import java.util.Scanner;
 //
 //public class Main {
@@ -589,6 +610,94 @@ public class Main {
 //            return x + sum(x - 1);
 //        }
 //        return 0;
+//    }
+//
+//}
+
+//자가진단 6
+//public class Main {
+//
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int z= gop(n);
+//        System.out.println(z);
+//    }
+//
+//    static int gop(int x) {
+//
+//        if (x == 0) {
+//            return 0;
+//        }
+//        return ((x % 10) * (x%10) + gop(x/10));
+//    }
+//}
+
+
+//형성평가2
+//public class Main {
+//
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        pr(n);
+//    }
+//
+//    static int pr(int x) {
+//        if (x <+ 0) {
+//            return 0;
+//        }
+//        pr(x-2);
+//
+//        if (x > 0){
+//            System.out.print(x + " ");
+//        }
+//        return 0;
+//    }
+//}
+
+//형성평가3 (소스코드 이해안감 설명필요)
+//public class Main {
+//
+//    public static void main(String[] args) {
+//        Scanner sc = new Scanner(System.in);
+//        int n = sc.nextInt();
+//        int m = sc.nextInt();
+//        dice(n, m);
+//
+//    }
+//    static int a = 0;
+//    static int[] sum = new int [10];
+//    // String[] weeks = new String[7];      #배열선언
+//
+//
+//    static void dice(int N, int M)
+//    {
+//        int i=0;
+//        for (i = 1; i <= 6; ++i)
+//        {
+//            sum[a] = i;
+//            if (a == N - 1)
+//            {
+//                int total = 0;
+//                for (int j = 0; j <= a; ++j)
+//                    total += sum[j];
+//
+//                if (total == M)
+//                {
+//                    for (int k = 0; k < N; ++k)
+//                        System.out.print(sum[k]);
+//                    System.out.print("\r\n");
+//                    return;
+//                }
+//            }
+//            else
+//            {
+//                a++;
+//                dice(N, M);
+//                a--;
+//            }
+//        }
 //    }
 //
 //}
